@@ -1,0 +1,17 @@
+form {
+    margin-top: 100px;
+    margin-left: 100px;
+    max-width: 400px;
+}
+
+.form-check {
+    margin: 20px 0;
+}
+
+.form-check-label {
+    margin-right: 10px;
+}
+
+.form-control-file {
+    margin-bottom: 20px;
+}
