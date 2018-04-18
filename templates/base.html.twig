@@ -4,33 +4,40 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
-            <link rel="stylesheet" href="/asset/css/style.css">
+            <link rel="stylesheet" href="/css/style.css">
             <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         {% endblock %}
     </head>
     <body>
-        {% block body %}
-            <form action="/new" method="post">
-                <input type="text" class="form-control" name="name" placeholder="Your name"/> <br/>
-                <input type="text" class="form-control" name="surname" placeholder="Your surname"/>
-                <div class="form-check form-check-inline">
-                <input type="radio" id="exampleRadios1" class="form-check-input" name="gender" value="Male"/>
-                <label class="form-check-label" for="exampleRadios1">
-                    Male
-                </label>
-                <input type="radio" id="exampleRadios2" class="form-check-input" name="gender" value="Female"/>
-                <label class="form-check-label" for="exampleRadios2">
-                    Female
-                </label>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-primary mb-3">
+            <div class="container">
+                <a href="/" class="navbar-brand">CRUD User</a>
+                <button class="navbar-toggler" type="button"
+                        data-toggle="collapse" data-target="#mobile-nav">
+                    <span class="navbar-toggle-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mobile-nav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/user/new" class="nav-link">New user</a>
+                        </li>
+                    </ul>
                 </div>
-                <input type="text" class="form-control" name="age" placeholder="Age"/> <br/>
-                <label for="exampleFormControlFile1">Upload your photo</label>
-                <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Send</button>
-            </form>
-        {% endblock %}
+            </div>
+        </nav>
+        <div class="container">
+            {% block body %}
+            {% endblock %}
+        </div>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+                crossorigin="anonymous"></script>
         {% block javascripts %}
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         {% endblock %}
     </body>
 </html>
